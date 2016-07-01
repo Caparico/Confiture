@@ -104,6 +104,9 @@ add_action( 'widgets_init', 'confiture_widgets_init' );
 function confiture_scripts() {
 	wp_enqueue_style( 'confiture-style', get_stylesheet_uri() );
 
+	// Add Google fonts Harmattan & Noto Serif
+	wp_enqueue_style( 'confiture-google-fonts', 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600|Vesper+Libre' );
+
 	wp_enqueue_script( 'confiture-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'confiture-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
