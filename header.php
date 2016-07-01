@@ -26,10 +26,29 @@
 <!--Setting the header image as the header background-->
 	<?php if ( get_header_image() ) { ?>
 		<header id="masthead" class="site-header" style="background-image: url(<?php header_image(); ?>)" role="banner">
-			<?php } else { ?>
+	<?php } else { ?>
 		<header id="masthead" class="site-header" role="banner">
-			<?php } ?>
-
+	<?php } ?>
+			
+			<?php // Display the 1st letter of the site's name, or the site logo - if one is defined ?>
+			<div class="site-logo">
+				<?php $site_title = get_bloginfo('name'); ?>
+				<a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
+					<div class="screen-reader-text">
+						<?php printf(esc_html__('Go to home page of %1$s', 'confiture'), $site_title); ?>
+					</div>
+					<?php
+					if (has_site_icon()) {
+						$site_icon = esc_url(get_site_icon_url( 270 )); ?>
+						<img src="<?php echo $site_icon; ?>" alt="" class="site-icon">
+					<?php } else { ?>
+					<div class="site-firstletter" aria-hidden="true">
+						<?php echo substr($site_title, 0, 1); ?>
+					</div>
+					<?php } ?>
+				</a>
+			</div>
+			
 		<div class="site-branding">
 			<?php
 			if ( is_front_page() && is_home() ) : ?>
