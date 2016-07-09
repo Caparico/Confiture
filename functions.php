@@ -104,10 +104,14 @@ add_action( 'widgets_init', 'confiture_widgets_init' );
 function confiture_scripts() {
 	wp_enqueue_style( 'confiture-style', get_stylesheet_uri() );
 
-	// Add Google fonts Harmattan & Noto Serif
+	// Add Google fonts Source Sans Pro & Vesper Libre
 	wp_enqueue_style( 'confiture-google-fonts', 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600|Vesper+Libre' );
-
-	wp_enqueue_script( 'confiture-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+//	Enqueue navigation.js and the jQuery library
+	wp_enqueue_script( 'confiture-navigation', get_template_directory_uri() . '/js/navigation.js', array( 'jquery' ), '20151215', true );
+	wp_localize_script( 'confiture-navigation', 'screenReaderText', array(
+		'expand'   => '<span class="screen-reader-text">' . __( 'expand child menu', 'confiture' ) . '</span>',
+		'collapse' => '<span class="screen-reader-text">' . __( 'collapse child menu', 'confiture' ) . '</span>',
+	) );
 
 	wp_enqueue_script( 'confiture-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
