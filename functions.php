@@ -106,6 +106,10 @@ function confiture_scripts() {
 
 	// Add Google fonts Source Sans Pro & Vesper Libre
 	wp_enqueue_style( 'confiture-google-fonts', 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600|Vesper+Libre' );
+
+	// Add icon fonts using Font Awesome CDN
+	wp_enqueue_script( 'confiture-fontawesome', 'https://use.fontawesome.com/a4038657b9.js' );
+
 //	Enqueue navigation.js and the jQuery library
 	wp_enqueue_script( 'confiture-navigation', get_template_directory_uri() . '/js/navigation.js', array( 'jquery' ), '20151215', true );
 	wp_localize_script( 'confiture-navigation', 'screenReaderText', array(
