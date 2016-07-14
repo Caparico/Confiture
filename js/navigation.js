@@ -142,4 +142,28 @@
 			});
 		}
 	});
+
+	// Hide/show toggle button on scroll
+
+	// declare a bunch of variables
+	var position, direction, previous;
+	// initiate a scroll function to identify the user's mouse scroll direction
+	$(window).scroll(function(){
+		if( $(this).scrollTop() >= position ){
+			direction = 'down';
+			if(direction !== previous){
+				$('.menu-toggle').addClass('hide');
+
+				previous = direction;
+			}
+		} else {
+			direction = 'up';
+			if(direction !== previous){
+				$('.menu-toggle').removeClass('hide');
+
+				previous = direction;
+			}
+		}
+		position = $(this).scrollTop();
+	});
 } )( jQuery );
