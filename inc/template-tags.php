@@ -11,12 +11,6 @@ if ( ! function_exists( 'confiture_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  */
-	/**
-	 *
-	 */
-	/**
-	 *
-	 */
 	function confiture_posted_on() {
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
@@ -43,11 +37,13 @@ if ( ! function_exists( 'confiture_posted_on' ) ) :
 	// Display the author's avatar if author has Gravatar (validating Gravatar with function 'confiture_validate_gravatar' at bottom
 	$author_id = get_the_author_meta( 'ID' );
 	if ( confiture_validate_gravatar( $author_id )) {
+		echo '<div class="meta-content has-avatar">';
 		echo '<div class="author-avatar">' . get_avatar( $author_id ) . '</div>';
+	} else {
+		echo '<div class="meta-content">';
 	}
 
 	echo '<span class="byline"> ' . $byline . '</span>','<span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
-
 	//	Display # of comments and link to comments
 	if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 		echo '<span class="comments-link">';
@@ -55,6 +51,7 @@ if ( ! function_exists( 'confiture_posted_on' ) ) :
 		comments_popup_link( sprintf( wp_kses( __( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'confiture' ), array( 'span' => array( 'class' => array() ) ) ), get_the_title() ) );
 		echo '</span>';
 	}
+	echo '</span>';
 }
 endif;
 
