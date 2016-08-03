@@ -110,8 +110,8 @@ function confiture_scripts() {
 	// Add icon fonts using Font Awesome CDN
 	wp_enqueue_script( 'confiture-fontawesome', 'https://use.fontawesome.com/a4038657b9.js' );
 
-//	Enqueue navigation.js and the jQuery library
-	wp_enqueue_script( 'confiture-navigation', get_template_directory_uri() . '/js/navigation.js', array( 'jquery' ), '20151215', true );
+//	Enqueue functions.js and the jQuery library
+	wp_enqueue_script( 'confiture-navigation', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '20151215', true );
 	wp_localize_script( 'confiture-navigation', 'screenReaderText', array(
 		'expand'   => '<span class="screen-reader-text">' . __( 'expand child menu', 'confiture' ) . '</span>',
 		'collapse' => '<span class="screen-reader-text">' . __( 'collapse child menu', 'confiture' ) . '</span>',

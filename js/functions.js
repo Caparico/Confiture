@@ -166,4 +166,7 @@
 		}
 		position = $(this).scrollTop();
 	});
+
+	// Wrap centered aligned images with a new figure element
+	$( 'img.aligncenter' ).wrap('<figure class="centered-image"></figure>');
 } )( jQuery );
