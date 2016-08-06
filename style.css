@@ -30,6 +30,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Navigation
 	## Links
 	## Menus
+	## Other Navigation
 # Accessibility
 # Alignments
 # Clearings
@@ -868,6 +869,86 @@ a:active {
     text-align: right;
     width: 50%;
 }
+/*--------------------------------------------------------------
+## Other Navigation
+--------------------------------------------------------------*/
+.post-navigation {
+	padding: 2em 0;
+	font-family: "Source Sans Pro", sans-serif;
+	text-align: left;
+	overflow: hidden;
+}
+
+@media screen and (min-width: 50em) {
+	.post-navigation {
+		padding: 2em 3em;
+	}
+}
+.nav-links {
+	max-width: 45em;
+	margin: 0 auto;
+	padding: 0 .4em;
+}
+.post-navigation a {
+	display: block;
+	width: 100%;
+	text-decoration: none;
+	padding: 1em;
+	border: 1px solid #c3c3c3;
+}
+.post-navigation a:hover,
+.post-navigation a:focus {
+	border-color: #000;
+}
+.post-navigation .post-title {
+	font-size: 1.2em;
+	font-weight: 700;
+}
+.post-navigation a:hover .post-title,
+.post-navigation a:focus .post-title {
+	text-decoration: underline;
+}
+.nav-previous {
+	padding-bottom: 1em;
+}
+/* On large screens - to avoid one nav button being much larger than the other - space and display them equally using Flex */
+@media screen and (min-width: 30em) {
+	.nav-links {
+		display: flex;
+		justify-content: space-between;
+		align-items: stretch;
+		padding: 0;
+	}
+
+	.post-navigation .nav-previous {
+		display: flex;
+		align-items: stretch;
+		float: left;
+		width: 48%;
+	}
+
+	.nav-previous {
+		padding-bottom: 0;
+	}
+
+	.post-navigation .nav-next {
+		display: flex;
+		align-items: stretch;
+		float: right;
+		text-align: right;
+		width: 48%;
+	}
+}
+
+.post-navigation .meta-nav {
+	display: block;
+}
+
+@media screen and (min-width: 30em) {
+	.post-navigation .meta-nav {
+		padding-bottom: 1em;
+	}
+}
 
 /*--------------------------------------------------------------
 # Accessibility
@@ -1404,7 +1485,7 @@ img.alignleft {
 ## Galleries
 --------------------------------------------------------------*/
 .gallery {
-	margin-bottom: 1.5em;
+	margin: 1.5em 0;
 }
 
 .gallery-item {
@@ -1412,11 +1493,41 @@ img.alignleft {
 	text-align: center;
 	vertical-align: top;
 	width: 100%;
+	padding: 1em;
+}
+
+.gallery-item img {
+	display: block;
+}
+
+.gallery-item a {
+	display: inline-block;
+	border-bottom: none;
+}
+
+.gallery-item a:hover,
+.gallery-item a:focus {
+	border-bottom: none;
+	box-shadow: none;
+}
+
+.gallery-item a img {
+	padding: .5em;
+	margin: 0 auto;
+	border: 1px solid #fff;
+	transition:all .4s ease-in-out;
+}
+
+.gallery-item a:hover img,
+.gallery-item a:focus img {
+	border-color: #c3c3c3;
+	opacity: 0.7;
 }
 
 .gallery-columns-2 .gallery-item {
 	max-width: 50%;
 }
+
 
 .gallery-columns-3 .gallery-item {
 	max-width: 33.33%;
@@ -1448,4 +1559,11 @@ img.alignleft {
 
 .gallery-caption {
 	display: block;
+	margin: 0;
+	font-family: 'Source Sans Pro', sans-serif;
+	border: none;
+}
+
+.gallery-caption::before {
+	content: "";
 }

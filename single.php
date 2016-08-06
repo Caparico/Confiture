@@ -22,7 +22,15 @@ get_header(); ?>
 				comments_template();
 			endif;
 
-			the_post_navigation();
+//			Create ACCESSIBLE 'Next' & 'Previous' post links at the bottom of each single post.
+			the_post_navigation( array(
+				'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'confiture' ) . '</span> ' .
+					'<span class="screen-reader-text">' . __( 'Next post:', 'confiture' ) . '</span> ' .
+					'<span class="post-title">%title</span>',
+				'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'confiture' ) . '</span> ' .
+					'<span class="screen-reader-text">' . __( 'Previous post:', 'confiture' ) . '</span> ' .
+					'<span class="post-title">%title</span>',
+			) );
 
 		endwhile; // End of the loop.
 		?>
