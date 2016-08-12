@@ -1,0 +1,28 @@
+{
+  "name": "confiture",
+  "version": "1.0.0",
+  "description": "A not-too-sweet WordPress theme",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Caparico/Confiture.git"
+  },
+  "keywords": [
+    "blogging",
+    "sweet",
+    "confiture"
+  ],
+  "author": "Caparico",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Caparico/Confiture/issues"
+  },
+  "homepage": "https://github.com/Caparico/Confiture#readme",
+  "devDependencies": {
+    "es6-promise": "^3.2.1",
+    "gulp": "^3.9.1"
+  }
+}

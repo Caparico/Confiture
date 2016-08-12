@@ -12,9 +12,8 @@ wp-content/upgrade/
 wp-content/uploads/
 wp-content/wp-cache-config.php
 wp-content/plugins/hello.php
-wp-content/themes/confiture/node_modules/.bin/
-wp-content/themes/confiture/node_modules/gulp/
-wp-content\themes\confiture\node_modules\.bin
+#Ignore all gulp related files
+/node_modules/
 
 /readme.html
 /license.txt
