@@ -23,6 +23,10 @@
   "homepage": "https://github.com/Caparico/Confiture#readme",
   "devDependencies": {
     "es6-promise": "^3.2.1",
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-rtlcss": "^1.0.0",
+    "gulp-util": "^3.0.7"
   }
 }
